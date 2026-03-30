@@ -40,46 +40,62 @@
         li { margin-bottom: 6px; }
         a { color: #7C9CFF; text-decoration: none; }
         a:hover { text-decoration: underline; }
+        .tldr {
+            background: #1a1a2e;
+            border-left: 3px solid #7C9CFF;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+            border-radius: 0 8px 8px 0;
+            color: #D0D0D0;
+        }
     </style>
 </head>
 <body>
     <h1>Onyx Control</h1>
     <p class="updated">Privacy Policy &mdash; Last updated: March 2026</p>
 
-    <p class="intro">Onyx Control respects your privacy. This policy explains how the app handles your data.</p>
+    <div class="tldr">
+        <strong>TL;DR:</strong> We don't collect your data. We don't even have a server to put it on. Your couch, your remote, your business.
+    </div>
+
+    <p class="intro">Onyx Control respects your privacy. This policy explains how the app handles your data &mdash; spoiler: it mostly doesn't.</p>
 
     <h2>1. Data Collection</h2>
-    <p>Onyx Control does <strong>NOT</strong> collect, transmit, or store any personal data on external servers. The app operates entirely on your local network.</p>
+    <p>Onyx Control does <strong>NOT</strong> collect, transmit, or store any personal data on external servers. No analytics, no tracking pixels, no "anonymous usage data" that somehow knows your favorite show. The app operates entirely on your local network.</p>
 
     <h2>2. Local Storage</h2>
-    <p>The app stores the following data locally on your device only:</p>
+    <p>The app stores a small amount of data locally on your device &mdash; and <strong>all of it is encrypted</strong> using AES-256 via the Android Keystore system:</p>
     <ul>
-        <li>Apple TV pairing credentials (encrypted using Android Keystore)</li>
-        <li>App preferences (display order, favorites)</li>
-        <li>Cached app icon URLs from the Apple iTunes API</li>
+        <li><strong>Pairing credentials</strong> &mdash; so you don't have to re-pair every time (you're welcome)</li>
+        <li><strong>App preferences</strong> &mdash; display order, favorites, language setting</li>
+        <li><strong>Cached icon URLs</strong> &mdash; fetched from Apple's iTunes API to make things look pretty</li>
     </ul>
-    <p>This data never leaves your device except as described below.</p>
+    <p>This data never leaves your device. It lives there, encrypted, minding its own business.</p>
 
     <h2>3. Network Communication</h2>
-    <p>The app communicates over your local Wi-Fi network with Apple TV devices using the Apple Companion Protocol. Additionally, the app contacts Apple's iTunes Search API (itunes.apple.com) to fetch app icon images. No personal or identifying information is sent in these requests.</p>
+    <p>The app talks to exactly two things:</p>
+    <ul>
+        <li><strong>Your Apple TV</strong> &mdash; over your local Wi-Fi, using the encrypted Apple Companion Protocol. This is the whole point of the app.</li>
+        <li><strong>Apple's iTunes Search API</strong> (itunes.apple.com) &mdash; to fetch app icons. No personal or identifying information is sent. We literally just ask "hey, what does Netflix's icon look like?" and that's it.</li>
+    </ul>
+    <p>That's the full list. No cloud servers, no Firebase, no surprise phone-homes.</p>
 
     <h2>4. Third-Party Services</h2>
-    <p>The app does not integrate any analytics, advertising, or tracking services. The only external service contacted is Apple's public iTunes Search API for retrieving app artwork.</p>
+    <p>Zero analytics. Zero ads. Zero tracking. The only external service is Apple's public iTunes Search API for app artwork.</p>
 
     <h2>5. Permissions</h2>
+    <p>Here's why the app asks for what it asks for:</p>
     <ul>
-        <li><strong>Network permissions:</strong> Required to discover and communicate with Apple TV devices on your local network</li>
-        <li><strong>Foreground service:</strong> Required to maintain connection while the app is in the background</li>
-        <li><strong>Notifications:</strong> Used to display Now Playing information</li>
+        <li><strong>Network &amp; Wi-Fi:</strong> To find and talk to your Apple TV. Kind of essential for a remote control app.</li>
+        <li><strong>Foreground service:</strong> So the connection doesn't drop when you switch apps to check a text.</li>
+        <li><strong>Notifications:</strong> To show what's currently playing. Completely optional.</li>
     </ul>
 
-    <h2>6. Children's Privacy</h2>
-    <p>The app does not knowingly collect data from children.</p>
 
-    <h2>7. Changes</h2>
-    <p>This policy may be updated. Changes will be reflected in the app's store listing.</p>
+    <h2>6. Changes</h2>
+    <p>This policy may be updated if we ever add features that affect data handling. Changes will be reflected in the app's store listing. But honestly, our philosophy is simple: your data stays yours.</p>
 
-    <h2>8. Contact</h2>
-    <p>For questions about this privacy policy, please contact us at <a href="mailto:hello@menaworks.xyz">hello@menaworks.xyz</a>.</p>
+    <h2>7. Contact</h2>
+    <p>Questions, concerns, or just want to say hi? Reach us at <a href="mailto:hello@menaworks.xyz">hello@menaworks.xyz</a>.</p>
 </body>
 </html>
